@@ -1,0 +1,15 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Memwatch UI</title>
+    <link href="css/index.css" rel="stylesheet" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="main-container">
+            <div id="nav">
+                <h2 class="title-logo">MemWatch-UI</h2>
+            <div>
+        </div>
+</body>
+</html>

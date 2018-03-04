@@ -1,0 +1,26 @@
+html, body {
+    height: 100%;
+    width:  100%;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+#main-container {
+    width: 100%;
+    height: 100%;
+}
+
+#nav {
+    height: 66px;
+    background: #384c5d;
+    color: #fff;
+}
+
+h2.title-logo {
+        padding: 17px;
+        box-sizing: border-box;
+        font-family: monospace;
+}
