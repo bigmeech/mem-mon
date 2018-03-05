@@ -1,15 +1,29 @@
 <!DOCTYPE>
 <html>
-    <head>
-        <title>Memwatch UI</title>
-    <link href="css/index.css" rel="stylesheet" type="text/css"/>
+  <head>
+    <title>Memwatch UI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div id="main-container">
-            <div id="nav">
-                <h2 class="title-logo">MemWatch-UI</h2>
-            <div>
-        </div>
-</body>
+    <link href="css/index.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div id="main-container">
+      <div id="nav">
+        <h2 class="title-logo">MemWatch-UI</h2>
+      <div>
+      <div id="plot-wrap">
+        <div id="mem-usage-plot"></div>
+      </div>
+    </div>
+    <script src="https://cdn.plot.ly/plotly-1.2.0.min.js"></script>
+    <script>
+      const chartContainer = document.querySelector("#mem-usage-plot");
+      Plotly.plot(chartContainer, [{
+          x: [1,2,3,4,5,6,7],
+          y: [0,5,10,15,20,25,30],
+        }], {
+          margin: { t: 0 },
+          title: 'Application Memory Usage'
+        });
+    </script>
+  </body>
 </html>

@@ -20,7 +20,19 @@ body {
 }
 
 h2.title-logo {
-        padding: 17px;
-        box-sizing: border-box;
-        font-family: monospace;
+  padding: 17px;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+#plot-wrap {
+  margin-top: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#mem-usage-plot {
+  width:90%;
+  height:350px;
 }
