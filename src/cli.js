@@ -37,6 +37,10 @@ function initOptions () {
     entryFile = path.resolve(__dirname, argv.entry, process.cwd());
   }
 
+  if(argv._.length >= 1) {
+    entryFile = argv._[0];
+  }
+
   // use main file in package.json if an entry file is not supplied
   options.entry = entryFile || mainFilePath;
   options.uiPort = argv.port || 5550;
