@@ -27,7 +27,6 @@ const argv = require('yargs')
 .argv;
 
 function initOptions () {
-  console.log('initing options');
   const options = {};
   const appConfig = require(path.resolve(process.cwd(), 'package.json'));
   const mainFilePath = path.resolve(process.cwd(), appConfig.main);
