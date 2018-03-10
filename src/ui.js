@@ -18,7 +18,16 @@ function initApp() {
     const staticDir = path.join(__dirname, '/public');
 
     app.use(logger());
-    app.use(nunjucks(viewsDirectory, { ext: 'nunjucks' }));
+    app.use(nunjucks({
+      ext: 'nunjucks',
+      path: viewsDirectory,
+      nunjucksConfig: {
+        tags:{
+          variableStart: '#{',
+          variableEnd: ']'
+        }
+      }
+    }));
     app.use(router.routes());
     app.use(router.allowedMethods());
     app.use(serve(staticDir));
