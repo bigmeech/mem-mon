@@ -3,6 +3,7 @@
 const path = require('path');
 const ui = require('./ui');
 const argv = require('yargs')
+  .usage('Usage: $0 [options] [entry] [args]')
   .option('c', {
     alias: 'config',
     describe: 'use config file',
