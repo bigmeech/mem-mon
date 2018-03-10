@@ -15,32 +15,55 @@
  * Additional Info
  * The monitor runs on a seperate isolated process so as not to o
  */
-function recordMemUsageFn(output, options) {
-  const interval = option.interval || 1000
+
+const options = {};
+
+/**
+ *
+ * @param _options
+ */
+function recordMemUsage(_options) {
+  const interval = _options.interval || 1000;
   setInterval(() => {
-    process.send(process.memoryUsage());
+    process.send(JSON.stringify(process.memoryUsage()));
   }, interval);
 }
 
-function requestGCFn(output, options) {
-  if(!options.exposeGC) {
+/**
+ *
+ * @param _options
+ * @returns {*}
+ */
+function requestGCFn(_options) {
+  if(!_options.exposeGC) {
     console.log('Garbage Collection is not enabled, please start memwatch-ui with the exposeGC option turn on');
     return;
   }
   return gc();
 }
 
-function recordRequestFn(output, options) {
-
+/**
+ *
+ * @param _options
+ */
+function recordRequestFn(_options) {
 }
 
-function agent (options) {
-  return { };
-}
+/**
+ *
+ * @param key
+ * @param value
+ */
+exports.setConfig = (key, value) => {
+  options[key] = value;
+};
 
-exports.recordMemUsage = recordMemUsageFn;
-exports.requestGC =requestGCFn;
-exports.recordRequest = recordRequestFn;
-exports.start = (options) => {
-
-}
+/**
+ *
+ * @param _options
+ */
+exports.start = (_options) => {
+  if (_options.memWatcher) {
+    return recordMemUsage(_options);
+  }
+};

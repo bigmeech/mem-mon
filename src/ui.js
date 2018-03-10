@@ -6,6 +6,7 @@ const path = require('path');
 const Router = require('koa-router');
 const nunjucks = require('koa-nunjucks-render');
 const serve = require('koa-static');
+const core = require('./core');
 
 function initApp() {
     const app = new Koa();
@@ -27,15 +28,16 @@ function initApp() {
 function initRoutes() {
     const router = new Router();
     router.get('index', '/', (ctx, next) => {
-        console.log(ctx.path);
         ctx.render('index');
     });
     return router;
 }
 
 // mem-mon
-exports.start = function (options) {
-    initApp().listen(options.uiPort || 5550, () => {
-        console.log(`memwatch-ui started at http://localhost:${options.uiPort}`);
-    });
-}
+exports.initialize = function (options) {
+  initApp().listen(options.uiPort || 5550, () => {
+    console.log(`MEMMON: MemMon dashboard started at http://localhost:${options.uiPort}`);
+    console.log(`MEMMON: options :${JSON.stringify(options)}`);
+    core.spawnApp(options.entry);
+  });
+};
