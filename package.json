@@ -36,7 +36,6 @@
     "koa": "^2.5.0",
     "koa-logger": "^3.1.0",
     "koa-nunjucks-2": "^3.0.2",
-    "koa-nunjucks-render": "^2.0.1",
     "koa-router": "^7.4.0",
     "koa-socket": "^4.4.0",
     "koa-static": "^4.0.2",
