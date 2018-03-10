@@ -1,10 +1,10 @@
 {
-  "name": "mem-mon",
+  "name": "memmon",
   "version": "0.1.0",
   "description": "Watch your node application memory consumption in a crappy but functional UI",
   "main": "index.js",
   "bin": {
-    "memmon": "index.js"
+    "memmon": "./src/cli.js"
   },
   "scripts": {
     "test": "mocha test",
