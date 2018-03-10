@@ -4,7 +4,7 @@ const logger = require('koa-logger');
 const views = require('koa-views');
 const path = require('path');
 const Router = require('koa-router');
-const nunjucks = require('koa-nunjucks-render');
+const nunjucks = require('koa-nunjucks-2');
 const serve = require('koa-static');
 const core = require('./core');
 
@@ -18,7 +18,7 @@ function initApp() {
     const staticDir = path.join(__dirname, '/public');
 
     app.use(logger());
-    app.use(nunjucks(viewsDirectory, { ext: '.nunjucks' }));
+    app.use(nunjucks(viewsDirectory, { ext: 'nunjucks' }));
     app.use(router.routes());
     app.use(router.allowedMethods());
     app.use(serve(staticDir));
