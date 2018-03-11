@@ -31,6 +31,7 @@ function initApp() {
     app.use(router.routes());
     app.use(router.allowedMethods());
     app.use(serve(staticDir));
+    require('../build/dev-server')(app);
     return app;
 }
 
